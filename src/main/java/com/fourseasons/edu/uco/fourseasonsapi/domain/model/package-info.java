@@ -1,0 +1,1 @@
+package com.fourseasons.edu.uco.fourseasonsapi.domain.model;
