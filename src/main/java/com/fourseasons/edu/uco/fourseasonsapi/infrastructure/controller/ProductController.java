@@ -13,8 +13,8 @@ import static org.springframework.http.ResponseEntity.ok;
 @RequestMapping("/inventory")
 public class ProductController {
 
-    @GetMapping("/product")
-    public ResponseEntity<ProductDTO> findProductById() {
+    @GetMapping("/product/{id}")
+    public ResponseEntity<ProductDTO> findProductById(@RequestParam("id") Long id) {
         return ok(new ProductDTO());
     }
 
