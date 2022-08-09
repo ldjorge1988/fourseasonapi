@@ -24,17 +24,17 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public ResponseEntity<ProductDTO> createProduct() {
+    public ResponseEntity<ProductDTO> createProduct(ProductDTO productDTO) {
         return ok(new ProductDTO());
     }
 
     @PutMapping("/product")
-    public ResponseEntity<ProductDTO> updateProduct() {
+    public ResponseEntity<ProductDTO> updateProduct(ProductDTO productDTO) {
         return ok(new ProductDTO());
     }
 
     @DeleteMapping("/product")
-    public ResponseEntity<ProductDTO> deleteProduct() {
+    public ResponseEntity<ProductDTO> deleteProduct(ProductDTO productDTO) {
         return ok(new ProductDTO());
     }
 
