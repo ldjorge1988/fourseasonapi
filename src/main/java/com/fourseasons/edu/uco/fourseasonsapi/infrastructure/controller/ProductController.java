@@ -2,6 +2,8 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.ProductDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.ProductListService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +13,11 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/inventory")
 public class ProductController {
 
+    private final ProductListService productListService;
     @GetMapping("/product/{id}")
     public ResponseEntity<GenericResponseDTO> findProductById(@RequestParam("id") Long id) {
         return ok(new GenericResponseDTO(new ProductDTO()));
@@ -21,10 +25,7 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity<GenericResponseDTO> getAllProducts() {
-        List<ProductDTO> products = new ArrayList<>();
-        products.add(ProductDTO.builder().build());
-        products.add(ProductDTO.builder().build());
-        return ok(new GenericResponseDTO(products));
+        return ok(productListService.execute());
     }
 
     @PostMapping("/product")

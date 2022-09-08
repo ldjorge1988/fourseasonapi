@@ -7,17 +7,15 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
-
-@Builder
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table (name="Category")
+@Table(name = "Category")
 public class CategoryEntity {
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @NotBlank
     private String name;
