@@ -1,1 +1,0 @@
-package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa;

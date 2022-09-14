@@ -2,6 +2,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Category;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.CategoryEntity;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.ProductEntity;
 import org.springframework.stereotype.Component;
 
 @Component
