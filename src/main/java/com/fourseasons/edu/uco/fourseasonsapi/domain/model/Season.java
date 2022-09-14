@@ -1,19 +1,22 @@
-package com.fourseasons.edu.uco.fourseasonsapi.application.dto;
+package com.fourseasons.edu.uco.fourseasonsapi.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@RequiredArgsConstructor
-public class SeasonDTO implements Serializable {
+public class Season implements Serializable {
+
     private Long id;
+    @NotBlank
     private String name;
+    @NotBlank
     private int category;
 }
