@@ -2,6 +2,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Category;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.CategoryRepository;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.CategoryEntity;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastructureCategoryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,8 @@ public class CategoryRepositoryImpl implements CategoryRepository {
 
     @Override
     public List<Category> getAll() {
-        return null;
+        List<CategoryEntity> categoryEntities = categoryRepositoryJpa.findAll();
+        return categoryMapper.entitiesToModels(categoryEntities);
     }
 
     @Override

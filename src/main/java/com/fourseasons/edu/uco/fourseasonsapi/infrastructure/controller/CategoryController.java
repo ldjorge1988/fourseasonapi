@@ -1,16 +1,12 @@
 package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.CategoryDTO;
-import com.fourseasons.edu.uco.fourseasonsapi.application.dto.ProductDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.service.CategoryListService;
-import com.fourseasons.edu.uco.fourseasonsapi.application.service.ProductListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.springframework.http.ResponseEntity.ok;
 

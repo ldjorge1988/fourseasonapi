@@ -2,7 +2,6 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
