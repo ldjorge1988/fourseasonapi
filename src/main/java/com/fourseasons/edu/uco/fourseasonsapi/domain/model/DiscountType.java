@@ -13,11 +13,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 
-
-
 public class DiscountType implements Serializable {
 
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 0;
 
     private Long id;
     private String code;

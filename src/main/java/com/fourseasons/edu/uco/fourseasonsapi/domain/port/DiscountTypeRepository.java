@@ -13,7 +13,7 @@ public interface DiscountTypeRepository {
 
     List<DiscountType> getAllByPrice();
 
-    Product save (DiscountType discountType);
+    DiscountType save (DiscountType discountType);
 
     boolean exist(DiscountType discountType);
 

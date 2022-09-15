@@ -1,7 +1,6 @@
 package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.DiscountType;
-import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Product;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.DiscountTypeRepository;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.DiscountTypeEntity;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfraestructureDiscountTypeMapper;
@@ -33,9 +32,10 @@ public class DiscountTypeRepositoryImpl implements DiscountTypeRepository {
     }
 
     @Override
-    public Product save(DiscountType discountType) {
+    public DiscountType save(DiscountType discountType) {
         return null;
     }
+
 
     @Override
     public boolean exist(DiscountType discountType) {

@@ -3,11 +3,13 @@ package com.fourseasons.edu.uco.fourseasonsapi.application.mapper;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.DiscountTypeDTO;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.DiscountType;
+import org.springframework.stereotype.Component;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ApplicationDiscountTypeMapper {
 
     public List<DiscountType> dtosToDomains(List<DiscountTypeDTO> discountTypeDTOS){
