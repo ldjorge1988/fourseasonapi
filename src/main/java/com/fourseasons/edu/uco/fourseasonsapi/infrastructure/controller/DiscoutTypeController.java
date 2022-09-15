@@ -3,6 +3,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.DiscountTypeDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.SeasonDTO;
+import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,8 @@ import static org.springframework.http.ResponseEntity.ok;
 
 public class DiscoutTypeController {
     @GetMapping("/discount/{id}")
-    public ResponseEntity<DiscountTypeDTO> findDiscountById(@RequestParam("id") Long id) {
-        return ok(new DiscountTypeDTO());
+    public ResponseEntity<GenericResponseDTO> findDiscountById(@RequestParam("id") Long id) {
+        return ok(new GenericResponseDTO(new DiscountTypeDTO()));
     }
 
     @PostMapping("/discount")
