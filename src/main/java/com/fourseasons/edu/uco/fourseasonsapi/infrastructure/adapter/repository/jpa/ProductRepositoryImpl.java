@@ -6,6 +6,7 @@ import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.Prod
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastuctureProductMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 
@@ -21,9 +22,14 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public Product findByName(String name) {
+        return productMapper.toDomain(productRepositoryJpa.findProductEntitiesByName(name));
+    }
+
+    @Override
     public List<Product> getAll() {
         List<ProductEntity> productEntities = productRepositoryJpa.findAll();
-        return productMapper.entitiesToModels(productEntities);
+        return productMapper.toDomains(productEntities);
     }
 
     @Override
@@ -33,16 +39,17 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product save(Product product) {
-        return null;
+        ProductEntity productEntity = productMapper.toEntity(product);
+        return productMapper.toDomain(productRepositoryJpa.save(productEntity));
     }
 
     @Override
     public boolean exist(Product product) {
-        return false;
+        return !ObjectUtils.isEmpty(productRepositoryJpa.findProductEntitiesByName(product.getName()));
     }
 
     @Override
-    public void delete(Product product) {
-
+    public Long delete(Product product) {
+        return 0L;
     }
 }

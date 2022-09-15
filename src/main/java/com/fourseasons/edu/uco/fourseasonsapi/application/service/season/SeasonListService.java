@@ -1,16 +1,17 @@
-package com.fourseasons.edu.uco.fourseasonsapi.application.service;
+package com.fourseasons.edu.uco.fourseasonsapi.application.service.season;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
-import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationCategoryMapper;
-import com.fourseasons.edu.uco.fourseasonsapi.domain.port.CategoryRepository;
+import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationSeasonMapper;
+import com.fourseasons.edu.uco.fourseasonsapi.domain.port.SeasonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryListService {
-    private final CategoryRepository repository;
-    private final ApplicationCategoryMapper mapper;
+public class SeasonListService {
+
+    private final SeasonRepository repository;
+    private final ApplicationSeasonMapper mapper;
     public GenericResponseDTO execute() {
         return GenericResponseDTO.builder()
                 .data(mapper.domainsToDtos(repository.getAll()))

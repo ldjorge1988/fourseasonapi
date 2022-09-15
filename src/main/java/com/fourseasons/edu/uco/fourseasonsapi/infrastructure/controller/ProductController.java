@@ -2,11 +2,14 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.ProductDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
-import com.fourseasons.edu.uco.fourseasonsapi.application.service.ProductListService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.product.ApplicationDeleteProductService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.product.ApplicationProductListService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.product.ApplicationSaveProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +20,10 @@ import static org.springframework.http.ResponseEntity.ok;
 @RequestMapping("/inventory")
 public class ProductController {
 
-    private final ProductListService productListService;
+    private final ApplicationProductListService productListService;
+    private final ApplicationSaveProductService saveProductService;
+
+    private final ApplicationDeleteProductService deleteProductService;
     @GetMapping("/product/{id}")
     public ResponseEntity<GenericResponseDTO> findProductById(@RequestParam("id") Long id) {
         return ok(new GenericResponseDTO(new ProductDTO()));
@@ -29,8 +35,8 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public ResponseEntity<ProductDTO> createProduct(ProductDTO productDTO) {
-        return ok(new ProductDTO());
+    public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody ProductDTO productDTO) {
+        return ok(saveProductService.execute(productDTO));
     }
 
     @PutMapping("/product")
@@ -39,8 +45,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/product")
-    public ResponseEntity<ProductDTO> deleteProduct(ProductDTO productDTO) {
-        return ok(new ProductDTO());
+    public ResponseEntity<Long> deleteProduct(@Valid @RequestBody ProductDTO productDTO) {
+        return ok(deleteProductService.execute(productDTO));
     }
 
     @GetMapping("/product/prices")

@@ -7,6 +7,7 @@ import java.util.List;
 public interface ProductRepository {
 
     Product getById();
+    Product findByName(String name);
     List<Product> getAll();
 
     List<Product> getAllByPrice();
@@ -15,5 +16,5 @@ public interface ProductRepository {
 
     boolean exist(Product product);
 
-    void delete(Product product);
+    Long delete(Product product);
 }
