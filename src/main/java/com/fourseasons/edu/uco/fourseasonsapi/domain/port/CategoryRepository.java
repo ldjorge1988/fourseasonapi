@@ -6,13 +6,11 @@ import java.util.List;
 
 public interface CategoryRepository {
     Category getById();
+    Category findByName(String name);
     List<Category> getAll();
-
-    List<Category> getAllByName();
-
     Category save(Category category);
 
     boolean exist(Category category);
 
-    void delete(Category category);
+    Long delete(Category category);
 }

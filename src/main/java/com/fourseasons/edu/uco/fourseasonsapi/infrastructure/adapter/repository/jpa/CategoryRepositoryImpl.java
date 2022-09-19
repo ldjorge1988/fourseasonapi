@@ -6,6 +6,7 @@ import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.Cate
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastructureCategoryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 
@@ -25,26 +26,28 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     @Override
     public List<Category> getAll() {
         List<CategoryEntity> categoryEntities = categoryRepositoryJpa.findAll();
-        return categoryMapper.entitiesToModels(categoryEntities);
+        return categoryMapper.toDomains(categoryEntities);
     }
 
     @Override
-    public List<Category> getAllByName() {
-        return null;
+    public Category findByName(String name) {
+        return categoryMapper.toDomain(categoryRepositoryJpa.findCategoryEntityByName(name));
     }
+
 
     @Override
     public Category save(Category category) {
-        return null;
+        CategoryEntity categoryEntity = categoryMapper.toEntity(category);
+        return categoryMapper.toDomain(categoryRepositoryJpa.save(categoryEntity));
     }
 
     @Override
     public boolean exist(Category category) {
-        return false;
+        return !ObjectUtils.isEmpty(categoryRepositoryJpa.findCategoryEntityByName(category.getName()));
     }
 
     @Override
-    public void delete(Category category) {
-
+    public Long delete(Category category) {
+        return 0L;
     }
 }

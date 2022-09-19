@@ -2,7 +2,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.CategoryDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
-import com.fourseasons.edu.uco.fourseasonsapi.application.service.category.CategoryListService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.category.ApplicationCategoryListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import static org.springframework.http.ResponseEntity.ok;
 @RequestMapping("/inventory")
 public class CategoryController {
 
-    private final CategoryListService categoryListService;
+    private final ApplicationCategoryListService categoryListService;
     @GetMapping("/category/{id}")
     public ResponseEntity<CategoryDTO> findCategoryById(@RequestParam("id") Long id) {
         return ok(new CategoryDTO());

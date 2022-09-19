@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryListService {
+public class ApplicationCategoryListService {
     private final CategoryRepository repository;
     private final ApplicationCategoryMapper mapper;
     public GenericResponseDTO execute() {
         return GenericResponseDTO.builder()
-                .data(mapper.domainsToDtos(repository.getAll()))
+                .data(mapper.toDto(repository.getAll()))
                 .build();
     }
 }
