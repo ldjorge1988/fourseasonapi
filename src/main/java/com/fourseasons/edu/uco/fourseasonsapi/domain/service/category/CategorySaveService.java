@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.domain.service;
+package com.fourseasons.edu.uco.fourseasonsapi.domain.service.category;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Category;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.CategoryRepository;

@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.application.service;
+package com.fourseasons.edu.uco.fourseasonsapi.application.service.discounttype;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.response.GenericResponseDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationDiscountTypeMapper;

@@ -13,7 +13,7 @@ public class ApplicationCategoryListService {
     private final ApplicationCategoryMapper mapper;
     public GenericResponseDTO execute() {
         return GenericResponseDTO.builder()
-                .data(mapper.toDto(repository.getAll()))
+                .data(mapper.toDtos(repository.getAll()))
                 .build();
     }
 }

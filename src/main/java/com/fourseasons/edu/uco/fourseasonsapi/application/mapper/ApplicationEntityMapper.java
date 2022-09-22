@@ -7,7 +7,7 @@ public interface ApplicationEntityMapper<Dto, Domain> {
 
     Dto toDto(Domain domain);
 
-    List<Domain> toDomain(List<Dto> dtoList);
+    List<Domain> toDomains(List<Dto> dtoList);
 
-    List<Dto> toDto(List<Domain> domainList);
+    List<Dto> toDtos(List<Domain> domainList);
 }
