@@ -3,7 +3,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.application.service.user;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.UserDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationUserMapper;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.User;
-import com.fourseasons.edu.uco.fourseasonsapi.domain.service.user.UserSaveService;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.user.UserSaveService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

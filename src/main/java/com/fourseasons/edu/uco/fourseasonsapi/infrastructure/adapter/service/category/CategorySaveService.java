@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.domain.service.category;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.category;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Category;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.CategoryRepository;
@@ -7,17 +7,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryDeleteService {
+public class CategorySaveService {
+
     private final CategoryRepository repository;
 
-    public Long execute(Category category) {
+    public Category execute(Category category) {
         validateExist(category);
-        return repository.delete(category);
+        return repository.save(category);
     }
 
     private void validateExist(Category category) {
-        if (!repository.exist(category)) {
-            throw new IllegalStateException("El usuario no se encuentra registrado");
+        if (repository.exist(category)) {
+            throw new IllegalStateException("El usuario ya se encuentra registrado");
         }
     }
 }

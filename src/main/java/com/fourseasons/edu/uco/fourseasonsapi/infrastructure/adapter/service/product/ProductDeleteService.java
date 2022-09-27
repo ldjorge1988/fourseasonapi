@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.domain.service.product;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.product;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Product;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.ProductRepository;
@@ -7,18 +7,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ProductSaveService {
-
+public class ProductDeleteService {
     private final ProductRepository repository;
 
-    public Product execute(Product product) {
+    public Long execute(Product product) {
         validateExist(product);
-        return repository.save(product);
+        return repository.delete(product);
     }
 
     private void validateExist(Product product) {
-        if (repository.exist(product)) {
-            throw new IllegalStateException("El producto ya se encuentra registrado");
+        if (!repository.exist(product)) {
+            throw new IllegalStateException("El usuario no se encuentra registrado");
         }
     }
 }

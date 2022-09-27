@@ -2,7 +2,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.application.service.product;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.ProductDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationProductMapper;
-import com.fourseasons.edu.uco.fourseasonsapi.domain.service.product.ProductDeleteService;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.product.ProductDeleteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

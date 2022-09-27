@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.domain.service.user;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.user;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.User;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.UserRepository;
