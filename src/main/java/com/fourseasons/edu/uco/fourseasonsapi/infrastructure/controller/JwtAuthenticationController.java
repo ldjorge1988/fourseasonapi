@@ -1,9 +1,11 @@
 package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.controller;
 
-import com.fourseasons.edu.uco.fourseasonsapi.config.JwtTokenUtil;
-import com.fourseasons.edu.uco.fourseasonsapi.domain.model.JwtRequest;
+import com.fourseasons.edu.uco.fourseasonsapi.application.dto.UserDTO;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.user.ApplicationFindUserService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.user.ApplicationSaveUserService;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.JwtResponse;
-import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.JwtUserDetailsService;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.config.JwtTokenUtil;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +21,7 @@ import java.util.Objects;
 
 @RestController
 @CrossOrigin
+@RequiredArgsConstructor
 public class JwtAuthenticationController {
 
     @Autowired
@@ -28,29 +31,30 @@ public class JwtAuthenticationController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private ApplicationFindUserService userDetailsService;
+
+    private final ApplicationSaveUserService saveUserService;
 
     @Autowired
     private UserDetailsService jwtInMemoryUserDetailsService;
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDTO authenticationRequest)
             throws Exception {
 
-        authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+        authenticate(authenticationRequest.getName(), authenticationRequest.getPassword());
 
-        final UserDetails userDetails = userDetailsService
-                .loadUserByUsername(authenticationRequest.getUsername());
+        final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getName());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
-   /* @PostMapping("/register")
-    public Mono<Object> saveUser(@RequestBody Object user)  {
-        return userDetailsService.save(user);
-    }*/
+    @PostMapping("/register")
+    public Object saveUser(@RequestBody UserDTO user) {
+        return saveUserService.execute(user);
+    }
 
     private void authenticate(String username, String password) throws Exception {
         Objects.requireNonNull(username);

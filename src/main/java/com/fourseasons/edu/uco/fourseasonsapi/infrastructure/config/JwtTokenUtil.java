@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.config;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

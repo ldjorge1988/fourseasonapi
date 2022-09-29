@@ -1,6 +1,6 @@
-package com.fourseasons.edu.uco.fourseasonsapi.config;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.config;
 
-import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.JwtUserDetailsService;
+import com.fourseasons.edu.uco.fourseasonsapi.application.service.user.ApplicationFindUserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,11 +15,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtUserDetailsService jwtUserDetailsService;
+    private ApplicationFindUserService jwtUserDetailsService;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

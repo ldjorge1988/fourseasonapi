@@ -1,8 +1,9 @@
-package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.impl;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.DiscountType;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.DiscountTypeRepository;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.DiscountTypeEntity;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa.DiscountTypeRepositoryJpa;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfraestructureDiscountTypeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -1,8 +1,9 @@
-package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.impl;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.User;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.UserRepository;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.UserEntity;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa.UserRepositoryJpa;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastructureUserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

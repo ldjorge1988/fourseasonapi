@@ -1,8 +1,9 @@
-package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.impl;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Category;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.CategoryRepository;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.entity.CategoryEntity;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.jpa.CategoryRepositoryJpa;
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastructureCategoryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.config;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.config;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 @Component
-public class JwtAuthenticactionEntryPoint implements AuthenticationEntryPoint, Serializable {
+    public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
     private static final long serialVersionUID = -7858869558953243875L;
 
     @Override
