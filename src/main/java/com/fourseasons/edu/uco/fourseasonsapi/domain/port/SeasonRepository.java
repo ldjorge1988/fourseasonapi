@@ -13,5 +13,5 @@ public interface SeasonRepository {
 
     boolean exist(Season season);
 
-    void delete(Season season);
+    Long delete(Season season);
 }

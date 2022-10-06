@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SeasonListService {
+public class ApplicationSeasonListService {
 
     private final SeasonRepository repository;
     private final ApplicationSeasonMapper mapper;
     public GenericResponseDTO execute() {
         return GenericResponseDTO.builder()
-                .data(mapper.domainsToDtos(repository.getAll()))
+                .data(mapper.toDtos(repository.getAll()))
                 .build();
     }
 }
