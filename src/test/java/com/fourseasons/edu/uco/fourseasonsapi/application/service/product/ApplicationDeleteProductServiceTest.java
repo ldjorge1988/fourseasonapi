@@ -3,7 +3,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.application.service.product;
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.ProductDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationProductMapper;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Product;
-import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.product.ProductDeleteService;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.service.product.ProductDeleteService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -2,7 +2,7 @@ package com.fourseasons.edu.uco.fourseasonsapi.application.service.user;
 
 import com.fourseasons.edu.uco.fourseasonsapi.application.dto.UserDTO;
 import com.fourseasons.edu.uco.fourseasonsapi.application.mapper.ApplicationUserMapper;
-import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.user.UserFindService;
+import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.service.user.UserFindService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

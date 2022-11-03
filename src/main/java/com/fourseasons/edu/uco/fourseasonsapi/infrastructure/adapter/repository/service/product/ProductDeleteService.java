@@ -1,4 +1,4 @@
-package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.service.product;
+package com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.service.product;
 
 import com.fourseasons.edu.uco.fourseasonsapi.domain.model.Product;
 import com.fourseasons.edu.uco.fourseasonsapi.domain.port.ProductRepository;
