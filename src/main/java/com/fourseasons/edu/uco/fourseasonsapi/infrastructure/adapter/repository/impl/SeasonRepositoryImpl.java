@@ -7,6 +7,7 @@ import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.adapter.repository.
 import com.fourseasons.edu.uco.fourseasonsapi.infrastructure.mapper.InfrastructureSeasonMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 
@@ -24,21 +25,23 @@ public class SeasonRepositoryImpl implements SeasonRepository {
     @Override
     public List<Season> getAll() {
         List<SeasonEntity> seasonEntities = seasonRepositoryJpa.findAll();
-        return seasonMapper.entitiesToModels(seasonEntities);
+        return seasonMapper.toDomains(seasonEntities);
     }
 
     @Override
     public Season save(Season season) {
-        return null;
+        SeasonEntity seasonEntity = seasonMapper.toEntity(season);
+        return seasonMapper.toDomain(seasonRepositoryJpa.save(seasonEntity));
     }
 
     @Override
     public boolean exist(Season season) {
-        return false;
+        return !ObjectUtils.isEmpty(seasonRepositoryJpa.findSeasonEntitiesByName(season.getName()));
     }
 
     @Override
-    public void delete(Season season) {
+    public Long delete(Season season) {
 
+        return 0L;
     }
 }
